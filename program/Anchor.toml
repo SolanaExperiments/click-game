@@ -1,7 +1,7 @@
 [features]
 seeds = false
-[programs.localnet]
-click_game = "MkabCfyUD6rBTaYHpgKBBpBo5qzWA2pK2hrGGKMurJt"
+[programs.devnet]
+click_game = "EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss"
 
 [registry]
 url = "https://anchor.projectserum.com"

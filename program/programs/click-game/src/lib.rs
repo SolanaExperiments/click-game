@@ -7,7 +7,7 @@ pub mod instructions;
 pub mod state;
 use instructions::*;
 
-declare_id!("MkabCfyUD6rBTaYHpgKBBpBo5qzWA2pK2hrGGKMurJt");
+declare_id!("EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss");
 
 #[program]
 pub mod click_game {
