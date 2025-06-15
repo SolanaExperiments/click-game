@@ -31,7 +31,7 @@ const ChopTreeButton = () => {
 
     try {
       const transaction = await program.methods
-        .chopTree(GAME_DATA_SEED, transactionCounter)
+        .click(GAME_DATA_SEED, transactionCounter)
         .accountsPartial({
           player: playerDataPDA,
           gameData: gameDataPDA,
@@ -61,7 +61,7 @@ const ChopTreeButton = () => {
 
     try {
       const transaction = await program.methods
-        .chopTree(GAME_DATA_SEED, transactionCounter)
+        .click(GAME_DATA_SEED, transactionCounter)
         .accountsPartial({
           player: playerDataPDA,
           gameData: gameDataPDA,

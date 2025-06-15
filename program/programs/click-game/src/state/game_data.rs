@@ -16,7 +16,7 @@ impl GameData {
                     msg!("Tree successfully chopped. New Tree coming up.");
                 } else {
                     self.total_wood_collected = v;
-                    msg!("Total wood chopped: {}", v);
+                    msg!("Total clicks: {}", v);
                 }
             }
             None => {

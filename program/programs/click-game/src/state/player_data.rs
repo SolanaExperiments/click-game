@@ -17,7 +17,7 @@ impl PlayerData {
     pub fn print(&mut self) -> Result<()> {
         // Note that logging costs a lot of compute. So don't use it too much.
         msg!(
-            "Authority: {} Wood: {} Energy: {}",
+            "Authority: {} Click: {} Energy: {}",
             self.authority,
             self.wood,
             self.energy
@@ -50,7 +50,7 @@ impl PlayerData {
         Ok(())
     }
 
-    pub fn chop_tree(&mut self, amount: u64) -> Result<()> {
+    pub fn click(&mut self, amount: u64) -> Result<()> {
         match self.wood.checked_add(amount) {
             Some(v) => {
                 self.wood = v;

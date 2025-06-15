@@ -4,8 +4,8 @@ use crate::state::player_data::PlayerData;
 use anchor_lang::prelude::*;
 use session_keys::{Session, SessionToken};
 
-pub fn chop_tree(mut ctx: Context<ChopTree>, counter: u16, amount: u64) -> Result<()> {
-    let account: &mut &mut ChopTree<'_> = &mut ctx.accounts;
+pub fn click(mut ctx: Context<Click>, counter: u16, amount: u64) -> Result<()> {
+    let account: &mut &mut Click<'_> = &mut ctx.accounts;
     account.player.update_energy()?;
     account.player.print()?;
 
@@ -14,20 +14,15 @@ pub fn chop_tree(mut ctx: Context<ChopTree>, counter: u16, amount: u64) -> Resul
     }
 
     account.player.last_id = counter;
-    account.player.chop_tree(amount)?;
+    account.player.click(amount)?;
     account.game_data.on_tree_chopped(amount)?;
 
-    msg!(
-        "You chopped a tree and got 1 wood. You have {} wood and {} energy left.",
-        ctx.accounts.player.wood,
-        ctx.accounts.player.energy
-    );
     Ok(())
 }
 
 #[derive(Accounts, Session)]
 #[instruction(level_seed: String)]
-pub struct ChopTree<'info> {
+pub struct Click<'info> {
     #[session(
         // The ephemeral key pair signing the transaction
         signer = signer,

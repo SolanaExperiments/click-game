@@ -8,16 +8,16 @@
   },
   "instructions": [
     {
-      "name": "chop_tree",
+      "name": "click",
       "discriminator": [
-        120,
-        56,
-        196,
-        91,
-        213,
-        182,
-        36,
-        28
+        11,
+        147,
+        179,
+        178,
+        145,
+        118,
+        45,
+        186
       ],
       "accounts": [
         {

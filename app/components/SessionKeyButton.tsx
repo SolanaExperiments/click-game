@@ -22,7 +22,7 @@ const SessionKeyButton = () => {
         topUp ? 10000000 : 0,
         expiryInMinutes
       );
-      console.log("Session created:", session);
+      console.log("Session created:", session, PROGRAM_ID.toBase58());
     } catch (error) {
       console.error("Failed to create session:", error);
     } finally {
@@ -35,6 +35,7 @@ const SessionKeyButton = () => {
     try {
       await sessionWallet.revokeSession();
       console.log("Session revoked");
+      console.log("Session revoked:", PROGRAM_ID.toBase58());
     } catch (error) {
       console.error("Failed to revoke session:", error);
     } finally {

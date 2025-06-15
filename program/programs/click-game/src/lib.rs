@@ -26,7 +26,7 @@ pub mod click_game {
         ctx.accounts.player.authority.key() == ctx.accounts.signer.key(),
         GameErrorCode::WrongAuthority
     )]
-    pub fn chop_tree(ctx: Context<ChopTree>, _level_seed: String, counter: u16) -> Result<()> {
-        chop_tree::chop_tree(ctx, counter, 1)
+    pub fn click(ctx: Context<Click>, _level_seed: String, counter: u16) -> Result<()> {
+        click::click(ctx, counter, 1)
     }
 }
