@@ -93,16 +93,9 @@ const ChopTreeButton = () => {
                 onClick={onChopClick}
                 width="175px"
               >
-                Chop tree Session
+                Click
               </Button>
             )}
-            <Button
-              isLoading={isLoadingMainWallet}
-              onClick={onChopMainWalletClick}
-              width="175px"
-            >
-              Chop tree MainWallet
-            </Button>
           </HStack>
         </VStack>
       )}

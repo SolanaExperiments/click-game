@@ -14,7 +14,7 @@ const DisplayPlayerData = () => {
         <HStack justifyContent="center" spacing={4}>
           <HStack>
             <Image src="/Wood.png" alt="Wood Icon" width={64} height={64} />
-            <Text>Wood: {Number(gameState.wood)}</Text>
+            <Text>Clicks: {Number(gameState.wood)}</Text>
           </HStack>
           <HStack>
             <Image src="/energy.png" alt="Energy Icon" width={64} height={64} />
