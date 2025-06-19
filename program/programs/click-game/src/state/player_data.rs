@@ -7,7 +7,7 @@ pub struct PlayerData {
     pub name: String,
     pub level: u8,
     pub xp: u64,
-    pub wood: u64,
+    pub click: u64,
     pub energy: u64,
     pub last_login: i64,
     pub last_id: u16,
@@ -19,7 +19,7 @@ impl PlayerData {
         msg!(
             "Authority: {} Click: {} Energy: {}",
             self.authority,
-            self.wood,
+            self.click,
             self.energy
         );
         Ok(())
@@ -51,12 +51,12 @@ impl PlayerData {
     }
 
     pub fn click(&mut self, amount: u64) -> Result<()> {
-        match self.wood.checked_add(amount) {
+        match self.click.checked_add(amount) {
             Some(v) => {
-                self.wood = v;
+                self.click = v;
             }
             None => {
-                msg!("Total wood reached!");
+                msg!("Total clicks!");
             }
         };
         match self.energy.checked_sub(amount) {

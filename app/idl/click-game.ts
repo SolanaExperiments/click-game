@@ -241,7 +241,7 @@ export type ClickGame = {
             "type": "u64"
           },
           {
-            "name": "wood",
+            "name": "click",
             "type": "u64"
           },
           {
