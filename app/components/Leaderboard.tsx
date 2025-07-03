@@ -9,6 +9,12 @@ type LeaderboardEntry = {
   name: string;
 };
 
+// Utility to shorten a Solana address (e.g., Abcd...Wxyz)
+function shortAddress(addr: string) {
+  if (!addr || addr.length <= 8) return addr;
+  return addr.slice(0, 4) + '...' + addr.slice(-4);
+}
+
 const Leaderboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [players, setPlayers] = useState<LeaderboardEntry[]>([]);
@@ -89,7 +95,7 @@ const Leaderboard: React.FC = () => {
             {players.map((player, idx) => (
               <Tr key={player.authority}>
                 <Td>{idx + 1}</Td>
-                <Td>{player.name || player.authority}</Td>
+                <Td>{player.name || shortAddress(player.authority)}</Td>
                 <Td>{player.click?.toString?.() ?? player.click}</Td>
               </Tr>
             ))}
