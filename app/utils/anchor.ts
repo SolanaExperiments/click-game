@@ -12,11 +12,11 @@ import {
 export const CONNECTION = new WrappedConnection(
   process.env.NEXT_PUBLIC_RPC
     ? process.env.NEXT_PUBLIC_RPC
-    : "https://rpc.magicblock.app/devnet",
+    : "https://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
   {
     wsEndpoint: process.env.NEXT_PUBLIC_WSS_RPC
       ? process.env.NEXT_PUBLIC_WSS_RPC
-      : "wss://rpc.magicblock.app/devnet",
+      : "wss://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
     commitment: "confirmed",
   }
 );

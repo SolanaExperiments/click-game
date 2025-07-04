@@ -81,6 +81,7 @@
 
 html,
 body {
+  color: #06F3C9;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -96,7 +97,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #06F3C9;
   text-decoration: none;
 }
 

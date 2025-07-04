@@ -55,8 +55,8 @@ const SessionKeyButton = () => {
           }
         >
           {sessionWallet && sessionWallet.sessionToken == null
-            ? "Create session"
-            : "Revoke Session"}
+            ? "Start Clicking"
+            : "Stop Clicking"}
         </Button>
       )}
     </>

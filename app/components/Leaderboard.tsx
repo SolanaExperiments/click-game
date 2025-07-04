@@ -86,9 +86,9 @@ const Leaderboard: React.FC = () => {
         <Table variant="simple" size="sm">
           <Thead>
             <Tr>
-              <Th>Rank</Th>
-              <Th>Name</Th>
-              <Th>Score</Th>
+              <Th color="#6C29D1">Rank</Th>
+              <Th color="#6C29D1">Name</Th>
+              <Th color="#6C29D1">Score</Th>
             </Tr>
           </Thead>
           <Tbody>
