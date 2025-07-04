@@ -12,16 +12,16 @@ import {
 export const CONNECTION = new WrappedConnection(
   process.env.NEXT_PUBLIC_RPC
     ? process.env.NEXT_PUBLIC_RPC
-    : "https://rpc.magicblock.app/devnet",
+    : "https://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
   {
     wsEndpoint: process.env.NEXT_PUBLIC_WSS_RPC
       ? process.env.NEXT_PUBLIC_WSS_RPC
-      : "wss://rpc.magicblock.app/devnet",
+      : "wss://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
     commitment: "confirmed",
   }
 );
 
-export const METAPLEX_READAPI = "https://devnet.helius-rpc.com/?api-key=78065db3-87fb-431c-8d43-fcd190212125";
+export const METAPLEX_READAPI = "https://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d";
 
 // Here you can basically use what ever seed you want. For example one per level or city or whatever.
 export const GAME_DATA_SEED = "level_2";

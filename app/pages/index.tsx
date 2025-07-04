@@ -13,20 +13,25 @@ export default function Home() {
   const { publicKey } = useWallet()
 
   return (
-    <Box>
+    <Box
+      minH="100vh"
+      bgImage="url('/pf_background_large.png')"
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
+    >
       <Flex px={4} py={4}>
         <Spacer />
         <WalletMultiButton />
       </Flex>
       <VStack>
-        <Heading>ClickGame</Heading>
+        <Heading color="#06F3C9">PixelFuel</Heading>
         {!publicKey && <Text>Connect to devnet wallet!</Text>}
         <DisplayGameState />
         <InitPlayerButton />
         <SessionKeyButton />
         <ChopTreeButton />
         <RequestAirdrop />
-        <DisplayNfts />
         <Leaderboard />
       </VStack>
     </Box>
