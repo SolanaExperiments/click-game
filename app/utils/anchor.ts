@@ -12,16 +12,16 @@ import {
 export const CONNECTION = new WrappedConnection(
   process.env.NEXT_PUBLIC_RPC
     ? process.env.NEXT_PUBLIC_RPC
-    : "https://small-intensive-water.solana-devnet.quiknode.pro/2c29d14534b0f94cb7a2574fa10b892a93b0b4a4",
+    : "https://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
   {
     wsEndpoint: process.env.NEXT_PUBLIC_WSS_RPC
       ? process.env.NEXT_PUBLIC_WSS_RPC
-      : "wss://small-intensive-water.solana-devnet.quiknode.pro/2c29d14534b0f94cb7a2574fa10b892a93b0b4a4",
+      : "wss://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d",
     commitment: "confirmed",
   }
 );
 
-export const METAPLEX_READAPI = "https://small-intensive-water.solana-devnet.quiknode.pro/2c29d14534b0f94cb7a2574fa10b892a93b0b4a4";
+export const METAPLEX_READAPI = "https://devnet.helius-rpc.com/?api-key=94a23809-93ec-402e-a898-a3f804dfab6d";
 
 // Here you can basically use what ever seed you want. For example one per level or city or whatever.
 export const GAME_DATA_SEED = "level_2";
