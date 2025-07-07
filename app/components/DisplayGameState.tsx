@@ -13,11 +13,11 @@ const DisplayPlayerData = () => {
       {gameState && publicKey && (
         <HStack justifyContent="center" spacing={4}>
           <HStack>
-            <Text>Fuel: {Number(gameState.click)}</Text>
+            <Text>Pixels: {Number(gameState.click)}</Text>
           </HStack>
           <HStack>
             <VStack>
-              <Text>Energy: {Number(gameState.energy)}</Text>
+              <Text>Fuel: {Number(gameState.energy)}</Text>
               <Text>Next in: {nextEnergyIn}</Text>
             </VStack>
           </HStack>

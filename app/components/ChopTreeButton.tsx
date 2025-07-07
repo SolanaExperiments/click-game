@@ -73,7 +73,7 @@ const ChopTreeButton = () => {
       const txSig = await sendTransaction(transaction, connection, {
         skipPreflight: true,
       });
-      console.log(`https://explorer.solana.com/tx/${txSig}?cluster=devnet`);
+      console.log(`https://explorer.solana.com/tx/${txSig}`);
     } catch (error: any) {
       console.log("error", `Chopping failed! ${error?.message}`);
     } finally {

@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/click_game.json`.
  */
 export type ClickGame = {
-  "address": "EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss",
+  "address": "2PCEtm6r8dtSxJrqMLhGQDdAA1rq915NsD7WRpLUzdyy",
   "metadata": {
     "name": "clickGame",
     "version": "0.1.0",

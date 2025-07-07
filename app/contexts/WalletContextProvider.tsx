@@ -9,8 +9,8 @@ import { clusterApiUrl } from "@solana/web3.js";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const network = WalletAdapterNetwork.Devnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const network = WalletAdapterNetwork.Mainnet;
+  const endpoint = useMemo(() => process.env.NEXT_PUBLIC_RPC || "https://small-intensive-water.solana-mainnet.quiknode.pro/2c29d14534b0f94cb7a2574fa10b892a93b0b4a4", []);
 
   const wallets = useMemo(() => [], [network]);
 

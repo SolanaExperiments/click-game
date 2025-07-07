@@ -26,12 +26,11 @@ export default function Home() {
       </Flex>
       <VStack>
         <Heading color="#06F3C9">PixelFuel</Heading>
-        {!publicKey && <Text>Connect to devnet wallet!</Text>}
+        {!publicKey && <Text>Connect to wallet!</Text>}
         <DisplayGameState />
         <InitPlayerButton />
         <SessionKeyButton />
         <ChopTreeButton />
-        <RequestAirdrop />
         <Leaderboard />
       </VStack>
     </Box>
