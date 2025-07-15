@@ -27,7 +27,6 @@ const InitPlayerButton = () => {
 
     try {
       console.log("[InitPlayer] Using publicKey:", publicKey?.toBase58());
-      console.log("[InitPlayer] Using RPC endpoint:", connection?.rpcEndpoint);
       const transaction = await program.methods
         .initPlayer(GAME_DATA_SEED)
         .accountsStrict({
