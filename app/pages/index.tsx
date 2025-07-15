@@ -6,7 +6,6 @@ import InitPlayerButton from "@/components/InitPlayerButton"
 import SessionKeyButton from "@/components/SessionKeyButton"
 import ClickButton from "@/components/ClickButton"
 import Leaderboard from "@/components/Leaderboard"
-import SessionWalletInfo from "@/components/SessionWalletInfo"
 
 export default function Home() {
   const { publicKey } = useWallet()
@@ -30,7 +29,6 @@ export default function Home() {
         <DisplayGameState />
         <SessionKeyButton />
         <Leaderboard />
-        <SessionWalletInfo />
       </VStack>
     </Box>
   )
