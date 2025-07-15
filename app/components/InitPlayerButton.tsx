@@ -11,22 +11,23 @@ import {
 } from "@/utils/anchor";
 
 const InitPlayerButton = () => {
-  const { publicKey, sendTransaction, wallet } = useWallet();
+  const { publicKey, wallet } = useWallet();
   const { connection } = useConnection();
   const [isLoading, setIsLoading] = useState(false);
   const { gameState, playerDataPDA } = useGameState();
 
   const provider = useAnchorProvider();
-  var program = getProgram(provider);
+  const program = getProgram(provider);
 
-  // Init player button click handler
   const handleClick = useCallback(async () => {
-    if (!publicKey || !playerDataPDA) return;
+    if (!publicKey || !playerDataPDA || typeof window === "undefined") return;
 
     setIsLoading(true);
 
     try {
-      console.log("[InitPlayer] Using publicKey:", publicKey?.toBase58());
+      console.log("[InitPlayer] Using publicKey:", publicKey.toBase58());
+
+      // Create transaction
       const transaction = await program.methods
         .initPlayer(GAME_DATA_SEED)
         .accountsStrict({
@@ -37,23 +38,31 @@ const InitPlayerButton = () => {
         })
         .transaction();
 
-      const txSig = await sendTransaction(transaction, connection, {
+      // Set recent blockhash & feePayer
+      transaction.recentBlockhash = (
+        await connection.getLatestBlockhash()
+      ).blockhash;
+      transaction.feePayer = publicKey;
+
+      // Sign transaction using Phantom's deep link provider
+      const signedTx = await window.phantom.solana.signTransaction(transaction);
+
+      // Send the signed transaction
+      const txSig = await connection.sendRawTransaction(signedTx.serialize(), {
         skipPreflight: true,
       });
 
-      console.log(`https://explorer.solana.com/tx/${txSig}`);
     } catch (error: any) {
       console.error("[InitPlayer] Transaction failed:", error);
-      if (error?.response) console.error("[InitPlayer] Error Response:", error.response);
-      if (error?.message) console.error("[InitPlayer] Error Message:", error.message);
-      if (error?.stack) console.error("[InitPlayer] Error Stack:", error.stack);
-      if (error?.cause) console.error("[InitPlayer] Error Cause:", error.cause);
-      try { console.error("[InitPlayer] Full Error (JSON):", JSON.stringify(error, null, 2)); } catch (e) {}
-      try { console.error("[InitPlayer] Full Error (toString):", error.toString()); } catch (e) {}
-      // Log the connection endpoint
+      try {
+        console.error("[InitPlayer] Full Error (JSON):", JSON.stringify(error, null, 2));
+      } catch (e) {}
+      try {
+        console.error("[InitPlayer] Full Error (toString):", error.toString());
+      } catch (e) {}
       console.log("[InitPlayer] Connection endpoint:", connection?.rpcEndpoint);
     } finally {
-      setIsLoading(false); // set loading state back to false
+      setIsLoading(false);
     }
   }, [publicKey, playerDataPDA, connection]);
 
