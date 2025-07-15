@@ -1,7 +1,11 @@
+[toolchain]
+
 [features]
-seeds = false
+resolution = true
+skip-lint = false
+
 [programs.devnet]
-click_game = "EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss"
+click_game = "H1zAru3Xcy8kKedAmQ41FgqTH2kA45WeWURx5UCkpZfm"
 
 [registry]
 url = "https://anchor.projectserum.com"

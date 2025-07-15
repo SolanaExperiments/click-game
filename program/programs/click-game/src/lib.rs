@@ -7,7 +7,7 @@ pub mod instructions;
 pub mod state;
 use instructions::*;
 
-declare_id!("EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss");
+declare_id!("H1zAru3Xcy8kKedAmQ41FgqTH2kA45WeWURx5UCkpZfm");
 
 #[program]
 pub mod click_game {
@@ -28,5 +28,8 @@ pub mod click_game {
     )]
     pub fn click(ctx: Context<Click>, _level_seed: String, counter: u16) -> Result<()> {
         click::click(ctx, counter, 1)
+    }
+    pub fn reset_player(ctx: Context<ResetPlayer>) -> Result<()> {
+        reset_player::reset_player(ctx)
     }
 }

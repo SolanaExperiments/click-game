@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/click_game.json`.
  */
 export type ClickGame = {
-  "address": "EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss",
+  "address": "H1zAru3Xcy8kKedAmQ41FgqTH2kA45WeWURx5UCkpZfm",
   "metadata": {
     "name": "clickGame",
     "version": "0.1.0",
@@ -151,6 +151,49 @@ export type ClickGame = {
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "resetPlayer",
+      "discriminator": [
+        173,
+        181,
+        112,
+        108,
+        27,
+        126,
+        225,
+        123
+      ],
+      "accounts": [
+        {
+          "name": "playerData",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [

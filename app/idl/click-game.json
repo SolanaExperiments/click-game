@@ -1,5 +1,5 @@
 {
-  "address": "EY4zkUhnGA5bt4Jp8tR4QjP4JncUjZ5CtPkdcMRLHoss",
+  "address": "H1zAru3Xcy8kKedAmQ41FgqTH2kA45WeWURx5UCkpZfm",
   "metadata": {
     "name": "click_game",
     "version": "0.1.0",
@@ -145,6 +145,49 @@
           "type": "string"
         }
       ]
+    },
+    {
+      "name": "reset_player",
+      "discriminator": [
+        173,
+        181,
+        112,
+        108,
+        27,
+        126,
+        225,
+        123
+      ],
+      "accounts": [
+        {
+          "name": "player_data",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  121,
+                  101,
+                  114
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "signer": true
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [

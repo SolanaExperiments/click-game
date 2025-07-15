@@ -4,10 +4,9 @@ import WalletMultiButton from "@/components/WalletMultiButton"
 import DisplayGameState from "@/components/DisplayGameState"
 import InitPlayerButton from "@/components/InitPlayerButton"
 import SessionKeyButton from "@/components/SessionKeyButton"
-import ChopTreeButton from "@/components/ChopTreeButton"
-import RequestAirdrop from "@/components/RequestAirdrop"
-import DisplayNfts from "@/components/DisplayNfts"
+import ClickButton from "@/components/ClickButton"
 import Leaderboard from "@/components/Leaderboard"
+import SessionWalletInfo from "@/components/SessionWalletInfo"
 
 export default function Home() {
   const { publicKey } = useWallet()
@@ -25,14 +24,13 @@ export default function Home() {
         <WalletMultiButton />
       </Flex>
       <VStack>
-        <Heading color="#06F3C9">PixelFuel</Heading>
-        {!publicKey && <Text>Connect to devnet wallet!</Text>}
-        <DisplayGameState />
+        {!publicKey && <Text>Connect to wallet!</Text>}
         <InitPlayerButton />
+        <ClickButton />
+        <DisplayGameState />
         <SessionKeyButton />
-        <ChopTreeButton />
-        <RequestAirdrop />
         <Leaderboard />
+        <SessionWalletInfo />
       </VStack>
     </Box>
   )
